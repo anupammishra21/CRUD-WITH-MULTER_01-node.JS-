@@ -1,0 +1,41 @@
+<%- include('../layouts/header') %>
+
+    <div class="container">
+        <div class="heading">update-data</div>
+        <form method="post" action="/update" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
+                   value="<%= user_details.name %>">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                value="<%= user_details.email %>" >
+            </div>
+            <div class="form-group">
+                <label>Contact</label>
+                <input type="text" class="form-control" id="contact" placeholder="Enter contact" name="contact"
+                value="<%= user_details.contact %>" >
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="text" class="form-control" id="age" placeholder="Enter age" name="age"
+                value="<%= user_details.age %>" >
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="image" id="image" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Existing Image</label>
+                <img src="/uploads/<%= user_details.image %>" width="150px" height="150px">
+            </div>
+            <input type="hidden" name="id" value="<%= user_details._id %>">
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
+        </form>
+    </div>
+
+    <%- include('../layouts/footer') %>
