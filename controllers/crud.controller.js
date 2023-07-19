@@ -7,7 +7,7 @@ class CrudController {
     async list(req, res) {
         try {
             let all_data = await Crud.find({ isDeleted: false }).sort({ createdAt: -1 });
-            // console.log(all_data);
+            console.log("all data ",all_data);
 
             res.render('list', {
                 title: "List",
